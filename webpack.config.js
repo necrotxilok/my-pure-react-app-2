@@ -6,6 +6,11 @@ module.exports = {
   entry: {
     // Vendor
     vendor: ['lodash', 'react', 'react-dom'],
+    // UI Components
+    components: {
+      import: './src/components',
+      dependOn: 'vendor',
+    },
     // Themes
     default: {
       import: './src/themes/default',
@@ -20,7 +25,7 @@ module.exports = {
     // Application
     app: {
       import: './src/index.jsx',
-      dependOn: 'vendor',
+      dependOn: ['vendor', 'components'],
     },
   },
   output: {
