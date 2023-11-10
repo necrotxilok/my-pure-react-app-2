@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './button.css'
 
 const theme = window.MainTheme || {}
@@ -20,4 +21,13 @@ const Button = (props) => {
 	)
 }
 
+Button.propTypes = {
+	label: PropTypes.string.isRequired,
+	onClick: PropTypes.func,
+};
+
+Button.defaultProps = {
+	onClick: undefined,
+};
+  
 export default Button
