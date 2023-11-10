@@ -1,4 +1,5 @@
-/** @type { import('@storybook/react-webpack5').StorybookConfig } */
+const path = require('path');
+
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
@@ -13,6 +14,13 @@ const config = {
   },
   docs: {
     autodocs: "tag",
+  },
+  webpackFinal: async (config, { configType }) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@themes': path.resolve(__dirname, "../src/themes"),
+    };
+    return config;
   },
 };
 export default config;

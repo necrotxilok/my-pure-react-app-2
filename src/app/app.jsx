@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Button from '@components/Button'
+import Button from '@components/button'
 import './app.css'
 
 const theme = window.MainTheme || {}

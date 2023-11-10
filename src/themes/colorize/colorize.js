@@ -1,5 +1,4 @@
 
-import _ from 'lodash'
 import DefaultTheme from '@themes/default'
 import './colorize.css'
 
@@ -19,4 +18,4 @@ const ColorizeTheme = {
 	backgroundImage: 'img/colorize_bg.jpg',
 }
 
-export default _.merge(DefaultTheme, ColorizeTheme)
+export default Object.assign({}, DefaultTheme, ColorizeTheme)

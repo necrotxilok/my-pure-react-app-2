@@ -14,12 +14,10 @@ module.exports = {
     // Themes
     default: {
       import: './src/themes/default',
-      dependOn: 'vendor',
       filename: 'themes/[name].js',
     },
     colorize: {
       import: './src/themes/colorize',
-      dependOn: 'vendor',
       filename: 'themes/[name].js',
     },
     // Application
