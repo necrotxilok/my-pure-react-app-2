@@ -2,6 +2,14 @@
  
 Simple Webpack project to learn how to integrate Storybook in a React App.
 
+## Setup
+
+Install dependencies
+
+```
+npm i
+```
+
 ## Scripts
 
 Init local Web Server with Hot Reload.
@@ -48,4 +56,4 @@ To access the Storybook
 
 http://localhost:6056/
 
-> **NOTE:** Bad issues with the themes system used in this App...
+> **NOTE:** Bad issues with the themes system used in this App when loading in Storybook... 
