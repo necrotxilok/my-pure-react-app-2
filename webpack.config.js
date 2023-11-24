@@ -4,12 +4,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
-    // Vendor
-    vendor: ['lodash', 'react', 'react-dom'],
     // UI Components
     components: {
       import: './src/components',
-      dependOn: 'vendor',
     },
     // Themes
     default: {
@@ -23,13 +20,24 @@ module.exports = {
     // Application
     app: {
       import: './src/index.jsx',
-      dependOn: ['vendor', 'components'],
+      dependOn: ['components'],
     },
   },
   output: {
     path: path.resolve(__dirname, 'dist/app'),
     filename: '[name].js',
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+        },
+      },
+    },
+  },  
   plugins: [
     new MiniCssExtractPlugin({
       filename: (pathData) => {
